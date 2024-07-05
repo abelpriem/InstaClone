@@ -1,0 +1,19 @@
+<script>
+    const req = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: 'soy@batman.com', newEmail: 'nosoy@batman.com', password: '1234' })
+    }
+
+    fetch('http://localhost:8000/users/email', req)
+        .then(res => {
+            if (res.ok) {
+                console.log(res.status)
+            } else {
+                console.error(res.status)
+            }
+        })
+        .catch(error => console.error(error))
+</script>

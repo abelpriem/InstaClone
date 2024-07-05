@@ -1,0 +1,21 @@
+<script>
+    const req = {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer 6595b6f5a456f32af3f9b029'
+        }
+    }
+
+    fetch('http://localhost:8000/newpost', req)
+        .then(res => {
+            if (res.ok) {
+                res.json()
+                    .then(body => console.log(res.status, body))
+                    .catch(error => console.error(error))
+            } else {
+                console.error(res.status)
+            }
+        })
+        .catch(error => console.log(error))
+
+</script>

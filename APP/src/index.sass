@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap')
+
+// RESETS
+
+*
+    font-family: Patua One
+
+html
+    scroll-behavior: smooth
+
+html,
+body
+    margin: 0
+
+// VARIABLES
+
+$m-size: 768px
+$l-size: 1024px
+$footer-h: 3rem
+
+// LIBRARY
+
+input
+    border-style: solid
+    border-color: black
+    border-radius: 0.25rem
+
+.link
+    color: black
+    text-decoration: none
+
+    &::after
+        content: ' ]'
+
+    &::before
+        content: '[ '
+
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 10px
+
+.container--horizontal
+    position: fixed
+    width: 100%
+    padding-bottom: 10px
+    box-sizing: border-box
+    top: 86px
+    z-index: 1
+
+.form
+    color: rgb(43, 40, 40)
+    border-style: groove
+    border-radius: 0.50rem
+    border-color: black
+    padding: 20px
+    display: flex
+    flex-direction: column
+    max-width: 240px
+    gap: 5px
+
+.button
+    background-color: rgb(43, 40, 40)
+    background-image: none
+    color: white
+    border-radius: 0.25rem
+    cursor: pointer
+
+    &s-post
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &s-edit
+        display: flex
+        align-items: center
+        gap: 5px
+
+// COMPONENTS
+
+.home-view
+    padding-top: 85px
+
+.home-header
+    display: flex
+    position: fixed
+    width: 100%
+    align-items: center
+    justify-content: space-between
+    box-sizing: border-box
+    background-color: rgb(165, 153, 153)
+    border-radius: 0.25rem
+    border-style: dashed
+    padding-left: 10px
+    padding-right: 10px
+    margin-bottom: 50px
+    z-index: 2
+
+.post
+    border-style: groove
+    border-color: rgb(0, 0, 0)
+    background-color: #fff
+    margin-top: 20px
+    padding: 10px
+    width: 345px
+
+    &-img
+        max-width: 320px
+
+    &-comments
+        font: italic
+        border-radius: 0
+        height: 50px
+        width: 335px
+        margin-bottom: 0.5rem
+
+.new-post
+    margin: 10px
+
+.footer
+    display: flex
+    position: fixed
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+    background-color: rgb(165, 153, 153)
+    border-style: dotted
+    border-radius: 0.25rem
+    padding: 5px
+    bottom: 0
+    width: 100%
+    min-height: 40px
+
+// QUERYS
+
+@media (min-width: $m-size)
+    .container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+
+@media (min-width: $l-size)
+    .container
+        display: grid
+        grid-template-columns: repeat(3, 1fr)

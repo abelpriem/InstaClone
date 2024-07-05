@@ -1,0 +1,21 @@
+<script>
+    const req = {
+        method: 'POST',
+        headers: {
+            Authorization: 'Bearer 6595b6f5a456f32af3f9b029',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ image: 'https://m.media-amazon.com/images/I/61M3rDwh4qL.png', text: 'Prueba Tetris!' })
+    }
+
+    fetch('http://localhost:8000/newpost', req)
+        .then(res => {
+            if (res.ok) {
+                console.log(res.status)
+            } else {
+                console.error(res.status)
+            }
+        })
+        .catch(error => console.error(error))
+
+</script>

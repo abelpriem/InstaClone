@@ -1,0 +1,20 @@
+<script>
+    const req = {
+        method: PATCH,
+        headers: {
+            Authorization: 'Bearer userId',
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ postText: 'lo que sea' })
+    }
+
+    fetch('http://localhost:8000/newpost/:postId', req)
+        .then(res => {
+            if (res.ok) {
+                console.log(res.status)
+            } else {
+                console.error(res.status)
+            }
+        })
+        .catch(error => console.error(error))
+</script>
